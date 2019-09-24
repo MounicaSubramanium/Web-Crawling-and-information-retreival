@@ -1,0 +1,306 @@
+TASK1:
+
+The following files are important to be run before running the baseline model:
+
+For search convenience, these are located under folder TASK1:
+
+1. corpusGeneratorTask1.py
+    
+   Run using python corpusGeneratorTask1.py
+
+   It goes into the cacm directory containing all the html files and generates 
+   the corpus for all these files under folder corpusTask1. It creates the corpus Task1 directory if there isnt any.
+
+
+   Note: corpusTask1 folder isnt provided with the submission
+   Note: cacm folder containing raw htmls also isnt provided due to large size
+
+
+ 2. indexGenerator.py
+
+    Run using python indexGenerator.py
+
+    The code goes into directory corpusTask1 generated from (1) and creates a unigram index file for all the corpus documents under the folder InvertedIndex.
+    It creates the Inverted Index folder if there isnt any
+    
+    The InvertedIndex folder is provided with this submission
+
+    IndexFile: invertedindex.txt
+
+
+ 3. queryGenerator.py
+
+ 	Run using python queryGenerator.py
+
+ 	This code takes in the cacm.query.txt file provided for Project and
+ 	generates a originalQuery.txt file with 64 queries.
+
+
+Now we can run all the 4 models (bm25, tfidf, jmsmoothing, querylikelihood)
+
+To run BM-25
+		python bm25.py invertedindex.txt originalQuery.txt bm25Score
+
+		It takes two arguments.
+		a) invertedindexfile to be used and finds them in InvertedIndex folder
+		b) query file to be used and finds them in the current working directory
+		   where code is run.
+		c) folder where to but the results for all 64 queries.
+
+		It creates bm25Score folder and puts the results for all 64 queries in them. Each file contains the top 100 documents with their score
+
+To run TF-IDF
+
+		python tfidf.py invertedindex.txt originalQuery.txt tfidfscore
+
+		point a) and b) and c)  is similar to mentioned above for bm25
+
+To run JM Smoothed Model:
+        python jmsmoothing.py invertedindex.txt originalQuery.txt jmscore
+
+        point a) and b) and c) is similar to mentioned above for bm-25
+
+
+
+To run Lucene:
+        I used eclipse Java.
+
+        After setting up the jar file, I went ahead to index the rawhtmls
+        using the code from HW-4 and after that I used the originalQuery.txt
+        to run the model
+
+        The file is provided here called: Lucene.java
+
+        The result is located under LuceneScore Folder
+
+
+For convenience all these results folder are located under Results folder provided with this submission
+
+
+TASK 2:
+
+    I used BM25 model for query enrichment task.
+
+    To run
+
+    python bm25PseudoRelFeedback.py invertedindex.txt originalQuery.txt bm25RRelFeedBack
+
+    point a) and b) and c) is similar to mentioned above for bm-25
+
+
+For convenience all these results folder are located under Results folder provided with this submission
+
+
+
+TASK3:
+The following files are important to be run before running the 3 baseline model:
+
+For search convenience, these are located under folder TASK3:
+
+1. stemmedDocsGeneratorFromCorpus.py
+    
+   run using stemmedDocsGeneratorFromCorpus.py
+
+   It takes the input file cacm_stem.txt provided with projects and generates
+   a corpusTask3Stemmed with seperate documents for ease of creating stemmedinvertedindex. 
+
+   Note: corpusTask3Stemmed folder isnt provided with the submission
+
+
+ 2. stemmedIndexGenerator.py
+
+    Run using python stemmedIndexGenerator.py
+
+    The code goes into directory corpusTask3Stemmed generated from (1) and creates a unigram index file for all the corpus documents under the folder InvertedIndex.
+    It creates the Inverted Index folder if there isnt any
+    
+    The InvertedIndex folder is provided with this submission
+
+    IndexFile: invertedindexstemmed.txt
+
+
+3. stoppedIndexGenerator.py
+	Run using python stoppedIndexGenerator.py
+
+	It basically creates the stopped inverted index under InvertedIndex Folder 
+	above. 
+
+	Index File: invertedindexstopped.txt
+
+
+4. stoppedQueryGenerator.py
+   Run using stoppedQueryGenerator.py
+   It basically creates the stoppedQuery.txt File containig all 64 stopped queries
+
+
+To run 3 baselines models with stopping
+
+1. python bm25.py invertedindexstopped.txt stoppedQuery.txt bm25ScoreStopped
+2. python tfidf.py invertedindexstopped.txt stoppedQuery.txt tfidfscorestopped
+3. python jmsmoothing.py invertedindexstopped.txt stoppedQuery.txt jmscorestopped
+
+
+To run 3 baselines models with stemming
+
+1. python bm25.py invertedindexstemmed.txt stoppedQuery.txt bm25Stemmed
+2. python tfidf.py invertedindexstemmed.txt stoppedQuery.txt tfidfStemmed
+3. python jmsmoothing.py invertedindexstemmed.txt cacm.query.txt jmStemmed
+
+
+As mentioned earlier all the the results folder (containing results for 64 queries) are located under Parent 'Results' Folder
+
+
+
+Phase 2:
+
+Run using python snippetGenerator.py bm25Score
+
+It takes the argument for the folder where results for all 64 queries are located
+and generates the snippet with top 10 documents for all 64 queries into single html file with query terms highlighted as needed
+
+A sample file : snippet-results.html is provided
+
+
+Phase 3:
+
+Run using python evaluator.py bm25score bm25eval
+
+It takes the argument for the folder where all results are located and generates 
+two files. One for precision, recall for all 64 queries along with MAP and MRR at the end. One for precicision at 5 and 20 .The second argument is to basically provide the file prefix.
+
+Results for all the models are located under Evaluation Folder
+
+
+Extra Credit:
+
+For extra credit, we created our own corpus with 10 small files and created a query file to be run on this corpus. The idea here was to prove the model using
+our own dataset as given the tasks in extra credit cacm docs might not have matched with 64 queries provided (Exact Match, Best Match and Proximity BestMatch)
+
+The corpus we created is located under Extra Credit Folder provided with this submission. The folder is zipped for convenience.
+Folder Name: corpusExtraCredit
+QueryFileName: queriesExtraCredit.txt (Also located under Extra Credit Folder)
+
+To run we use python extraCredit.py
+Note: extraCredit.py file is located under Extra Credit Folder as well
+
+Running the file gives following prompt
+Please enter the Search Type, ExactMatch - 0, BestMatch - 1, Proximity Match - 2: 0
+
+Here we give 0 - For running Exact Match
+
+If we enter 2, we get another prompt:
+
+Please enter match proximity: 3
+
+Here we entered proximity as 3 
+
+
+Explaination for each search Tool:
+
+Exact Match:
+
+The code for Exact Match basically fetches all documents that contain all the query terms:
+
+Once we find the documents with all the query terms, we create a final list of documents to be ranked who have exact match for query
+
+We then rank using the tf-idf model
+
+We provide the following output on command line:
+
+For example we ran all 6 queries in queriesExtraCredit.txt file using tfidf model
+
+Query No = 1  had document 1 , document 2, document 5 and document 7 matching the exact scenario:
+The results have all the documents with their scores
+Document having most score is best for this Query
+
+Relevant Documents for Query No = 1, Search Type = Exact Match
+{'document1': 0.03828450905577641, 'document4': 0.0870102478540373, 'document5': 0.03422926412250804, 'document7': 0.05037435402075843}
+Relevant Documents for Query No = 2, Search Type = Exact Match
+{'document1': 0.017851484105136782, 'document4': 0.020285777392200888, 'document5': 0.09483674338563, 'document7': 0.011744397437589987}
+Relevant Documents for Query No = 3, Search Type = Exact Match
+{'document1': 0.19476542927290225, 'document4': 0.12973785051274053, 'document5': 0.016327576925429983, 'document7': 0.011744397437589987}
+Relevant Documents for Query No = 4, Search Type = Exact Match
+{'document1': 0.014266997757549296, 'document4': 0.09543837495442525, 'document7': 0.0740261614967058}
+Relevant Documents for Query No = 5, Search Type = Exact Match
+{'document10': 0.07858855750246012, 'document5': 0.024918323110536135, 'document7': 0.05377111829115692}
+Relevant Documents for Query No = 6, Search Type = Exact Match
+{'document5': 0.05171374478536808}
+
+
+Best Match:
+
+
+The code for Best Match basically fetches all documents that containt atleast one query term
+
+We then rank using the tf-idf model
+
+As above the output of command line gives the following for our test dataset:
+
+Relevant Documents for Query No = 1, Search Type = BestMatch
+{'document1': 0.03828450905577641, 'document10': 0.09078894443912461, 'document3': 0.026252182507554088, 'document4': 0.0870102478540373, 'document5': 0.03422926412250804, 'document6': 0.0, 'document7': 0.05037435402075843, 'document9': 0.0870102478540373, 'document2': 0.0, 'document 8': 0.010885051283619988}
+Relevant Documents for Query No = 2, Search Type = BestMatch
+{'document1': 0.017851484105136782, 'document2': 0.09129026566431099, 'document3': 0.1616983644483803, 'document4': 0.020285777392200888, 'document5': 0.09483674338563, 'document6': 0.024755256448569473, 'document7': 0.011744397437589987, 'document9': 0.020285777392200888, 'document 8': 0.077930714591485}
+Relevant Documents for Query No = 3, Search Type = BestMatch
+{'document1': 0.19476542927290225, 'document2': 0.16830819941012967, 'document3': 0.013126091253777044, 'document4': 0.12973785051274053, 'document5': 0.016327576925429983, 'document7': 0.011744397437589987, 'document9': 0.020285777392200888, 'document 8': 0.016327576925429983}
+Relevant Documents for Query No = 4, Search Type = BestMatch
+{'document1': 0.014266997757549296, 'document2': 0.029994917842819362, 'document3': 0.061754242617569274, 'document4': 0.09543837495442525, 'document6': 0.0374936473035242, 'document7': 0.0740261614967058, 'document 8': 0.00869938887655445}
+Relevant Documents for Query No = 5, Search Type = BestMatch
+{'document10': 0.07858855750246012, 'document3': 0.060097132207763616, 'document5': 0.024918323110536135, 'document6': 0.03648754455471362, 'document7': 0.05377111829115692, 'document 8': 0.04983664622107227}
+Relevant Documents for Query No = 6, Search Type = BestMatch
+{'document 8': 0.022348554435955004, 'document2': 0.06057895817714546, 'document5': 0.05171374478536808, 'document6': 0.15144739544286365}
+
+
+
+
+
+
+Best Order Match with Proxmity:
+The code for Best Match with Proximity first fetches all the documents that containt atleast one query term
+We create a dictionary mapping of {'docID' - [ 'term1' , 'term2', 'term3'] } for all the docs.
+
+To create the final list of documents to be ranked, we do the following
+1. if the documents contain only one query term then they are included to be score using tf-idf mode
+2. if the documents contain more than one query term, we do the following:
+    a) we generated a bi gram combo list of query terms occuring in the docment using combinations module in python library
+       Ex from above:
+       i) term 1, term 2
+       ii) term 1, term 3
+       iii) term 2, term 3
+
+    For each of these pairs we see in the document, whether they are within proximity, if all of them are this document
+    is included in the list to be scored on tf-idf model
+
+Sample output for Best with proximity
+
+Relevant Documents for Query No = 1, Search Type = Proximity Match
+{'document10': 0.09078894443912461, 'document3': 0.026252182507554088, 'document4': 0.0870102478540373, 'document5': 0.03422926412250804, 'document6': 0.0, 'document7': 0.05037435402075843, 'document9': 0.0870102478540373, 'document2': 0.0, 'document 8': 0.010885051283619988}
+Relevant Documents for Query No = 2, Search Type = Proximity Match
+{'document2': 0.09129026566431099, 'document3': 0.1616983644483803, 'document4': 0.020285777392200888, 'document5': 0.09483674338563, 'document6': 0.024755256448569473, 'document7': 0.011744397437589987, 'document9': 0.020285777392200888, 'document 8': 0.077930714591485}
+Relevant Documents for Query No = 3, Search Type = Proximity Match
+{'document2': 0.16830819941012967, 'document3': 0.013126091253777044, 'document4': 0.12973785051274053, 'document5': 0.016327576925429983, 'document7': 0.011744397437589987, 'document9': 0.020285777392200888, 'document 8': 0.016327576925429983}
+Relevant Documents for Query No = 4, Search Type = Proximity Match
+{'document2': 0.029994917842819362, 'document3': 0.061754242617569274, 'document4': 0.09543837495442525, 'document6': 0.0374936473035242, 'document7': 0.0740261614967058, 'document 8': 0.00869938887655445}
+Relevant Documents for Query No = 5, Search Type = Proximity Match
+{'document10': 0.07858855750246012, 'document3': 0.060097132207763616, 'document5': 0.024918323110536135, 'document6': 0.03648754455471362, 'document7': 0.05377111829115692, 'document 8': 0.04983664622107227}
+Relevant Documents for Query No = 6, Search Type = Proximity Match
+{'document 8': 0.022348554435955004, 'document2': 0.06057895817714546, 'document5': 0.05171374478536808, 'document6': 0.15144739544286365}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

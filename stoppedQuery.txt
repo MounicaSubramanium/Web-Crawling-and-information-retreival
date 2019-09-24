@@ -1,0 +1,64 @@
+what articles exist deal tss time sharing system operating system ibm computers
+i interested articles written prieve udo pooch prieve b pooch u
+intermediate languages construction multi-targeted compilers tcoll
+i interested mechanisms communicating disjoint processes possibly exclusively distributed environment i descriptions complete mechanisms implementations opposed theoretical work abstract problem remote procedure calls message-passing examples interests
+i papers design implementation editing interfaces window-managers command interpreters etc the essential issues human interface design views improvements user efficiency effectiveness satisfaction
+interested articles robotics motion planning geometric combinatorial aspects we interested dynamics arm motion
+i interested distributed algorithms concurrent programs processes communicate synchronize message passing areas interest include fault-tolerance techniques understanding correctness algorithms
+addressing schemes resources networks resource addressing network operating systems
+security considerations local networks network operating systems distributed systems
+parallel languages languages parallel computation
+setl very high level languages
+portable operating systems
+code optimization space efficiency
+find discussions optimal implementations sort algorithms database management applications
+find discussions horizontal microcode optimization special emphasis optimization loops global optimization
+find descriptions handling operating systems based multiple processes message passing
+optimization intermediate machine code
+languages compilers parallel processors especially highly horizontal microcoded machines code compaction
+parallel algorithms
+graph theoretic algorithms applicable sparse matrices
+computational complexity intractability class-complete reductions algorithms efficiency
+i interested hidden-line hidden-surface algorithms cylinders toroids spheres cones this specialized topic computer graphics
+distributed computing structures algorithms
+applied stochastic processes
+performance evaluation modelling computer systems
+concurrency control mechanisms operating systems
+memory management aspects operating systems
+any information packet radio networks of interest algorithms packet routing dealing network topography i interested hardware network
+number-theoretic algorithms especially involving prime number series sieves chinese remainder theorem
+articles text formatting systems including systems examples nroff scribe bravo
+i find articles describing singular decomposition digital image processing applications include finding approximations original image restoring images subject noise an article subject h andrews c patterson outer product expansions digital image processing american mathematical andrews h patterson c
+i find articles describing graph algorithms based eigenvalue decomposition singular decomposition ajacency matrix graph i especially interested heuristic algorithms graph coloring graph isomorphism method
+articles sensitivity eigenvalue decomposition real matrices particular zero-one matrices i especially interested separation eigenspaces distinct eigenvalues articles subject c davis w kahn the rotation eigenvectors permutation siam j numerical analysis vol 7 no 1 1970 g stewart error bounds approximate invariant subspaces closed linear operators siam j numerical analysis. vol 8 no 4 1971 davis c kahn w stewart g
+currently interested isolation root polynomial recent material heindel l
+probabilistic algorithms especially dealing algebraic symbolic manipulation some examples rabiin probabilistic algorithm finite field siam waztch probabilistic testing polynomial identities siam rabin,m
+fast algorithm context-free language recognition parsing
+articles describing relationship data types concurrency e.g type process synchronization attempt processes type correct message-passing system notion types messages i.e check sender message receiver treating bit stream type
+what type module i don want entire literature abstract data types here i sure phrase avoid it i interested questions check module matches contexts used
+what type compatibility mean languages allow programmer defined types you want restrict extensible languages allow definition abstract data types programmer-supplied definitions operators
+list articles dealing data types languages referenced frequently papers languages e.g catch languages interesting type structures i missed
+theory distributed systems databases subtopics special interest include reliability fault-tolerance distributed systems atomicity distributed transactions synchronization algorithms resource allocation lower bounds models asynchronous parallel systems also theory communicating processes protocols p box 2158 yale station new haven conn 06520
+computer performance evaluation techniques pattern recognition clustering la 70803
+analysis perception shape humans computers shape descriptions shape recognition computer two-dimensional shapes measures circularity shape matching
+texture analysis computer digitized texture analysis texture synthesis perception texture
+the operations research models optimize information system performance this includes fine tuning decisions secondary index selection reorganization distributed databases
+the application fuzzy subset theory clustering information retrieval problems this includes performance evaluation automatic indexing considerations
+the bayesian decision models optimize information retrieval system performance this includes stopping rules determine user cease scanning output retrieval search
+the computer science principles e.g data structures numerical methods generating optimization e.g linear programming algorithms this includes issues khachian russian ellipsoidal algorithm complexity algorithms
+the role information retrieval knowledge based systems i.e. expert systems
+parallel processors information retrieval
+parallel processors paging algorithms
+modelling simulation agricultural ecosystems
+mathematical induction group theory integers modulo m probability binomial coefficients binomial theorem homomorphism morphism transitivity relations relation matrix syracuse university 313 link hall syracuse n 13210
+semantics programming languages including abstract specifications data types denotational semantics proofs correctness hoare a dijkstra e university massachusetts amherst ma 01003
+anything dealing star height regular languages regular expressions regular events
+articles relation algebraic theory semigroups monoids study automata regular languages
+abstracts articles j backus can programming liberated von neumann style a functional style algebra programs cacm 21 re millo r lipton a perlis letter acm forum cacm 22 1979 629-630 backus j de millo r lipton r perlis a
+algorithms statistical packages anova regression squares generalized linear models system design capabilities statistical formula interest student test wilcoxon sign tests multivariate univariate components included
+dictionary construction accessing methods fast retrieval words lexical items morphologically related information hashing indexing methods applied english spelling natural language problems
+hardware software relating database management systems database packages back end computers special associative hardware microcomputers attached disk heads things rap relational network codasyl hierarchical models systems system r ims adabas total etc
+information retrieval articles gerard salton clustering bibliographic coupling citations co-citations vector space model boolean search methods inverted files feedback etc salton g
+results relating parallel complexity theory pram uniform circuits
+algorithms parallel computation especially comparisons parallel sequential algorithms
+list articles el1 ecl el1 el 1 i don remember it
